@@ -1,6 +1,7 @@
 .services {
   &__container {
     position: relative;
+    z-index: 42;
   }
 
   &__pagination {

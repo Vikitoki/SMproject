@@ -40,21 +40,5 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.toggle("lock");
   }
 
-  // Get height to services image ===========================================
-
-  const images = document.querySelectorAll(".item-services__image");
-  const servicesTops = document.querySelectorAll(".item-services__row_main");
-  const servicesHeights = [];
-
-  servicesTops.forEach((top) => {
-    let elementHeight = getComputedStyle(top).height;
-
-    servicesHeights.push(parseInt(elementHeight));
-  });
-
-  let maxHeight = Math.max(...servicesHeights);
-
-  images.forEach((img) => {
-    img.style.height = `${maxHeight}px`;
-  });
+  
 });
