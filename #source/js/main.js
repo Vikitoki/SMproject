@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   //@prepros-append dynamicAdapt.js
+  //@prepros-append sliders.js
 
   // Turn img to background ===========================================
 
@@ -28,9 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     introBackground = document.querySelector(".intro__background"),
     header = document.querySelector(".header");
 
- 
   burgerMenuBtn.addEventListener("click", showIntroMenu);
-  
 
   function showIntroMenu(params) {
     this.classList.toggle("active");
@@ -40,4 +39,22 @@ document.addEventListener("DOMContentLoaded", function () {
     header.classList.toggle("active");
     document.body.classList.toggle("lock");
   }
+
+  // Get height to services image ===========================================
+
+  const images = document.querySelectorAll(".item-services__image");
+  const servicesTops = document.querySelectorAll(".item-services__row_main");
+  const servicesHeights = [];
+
+  servicesTops.forEach((top) => {
+    let elementHeight = getComputedStyle(top).height;
+
+    servicesHeights.push(parseInt(elementHeight));
+  });
+
+  let maxHeight = Math.max(...servicesHeights);
+
+  images.forEach((img) => {
+    img.style.height = `${maxHeight}px`;
+  });
 });
