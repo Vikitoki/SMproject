@@ -42,22 +42,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Show form`s select =========================================
 
-  const selectBtn = document.querySelector(".main-form__input_default"),
-    selectWays = document.querySelector(".main-form__ways"),
+  const selectBtn = document.querySelector(".main-form__select-default"),
+    selectBlock = document.querySelector(".main-form__ways"),
+    selectWays = document.querySelectorAll(".ways-form-main__list li"),
     feedback = document.querySelector(".feedback");
 
   selectBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
-    selectWays.classList.toggle("active");
+    selectBlock.classList.toggle("active");
     this.classList.toggle("active");
+  });
+
+  selectWays.forEach((way) => {
+    way.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      let value = way.textContent;
+      selectBtn.textContent = value;
+
+      selectBlock.classList.remove("active");
+      selectBtn.classList.remove("active");
+    });
   });
 
   feedback.addEventListener("click", function (event) {
     event.preventDefault();
 
     if (event.target && !event.target.closest(".main-form__select")) {
-      selectWays.classList.remove("active");
+      selectBlock.classList.remove("active");
     }
   });
 });

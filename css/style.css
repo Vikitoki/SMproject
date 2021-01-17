@@ -1216,34 +1216,13 @@ h6 {
   color: #ffffff;
   transition: box-shadow 0.3s ease, border 0.3s ease;
 }
-.main-form__input_default span {
-  display: block;
-  position: relative;
-}
-.main-form__input_default span::after {
-  content: "";
-  display: block;
-  width: 11px;
-  height: 7px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  z-index: 1;
-  transform: translateY(-50%);
-  transition: transform 0.3s ease;
-  background: url(../../images/feedback/arrow.png) 0 0 no-repeat;
-}
-.main-form__input_default.active span::after {
-  content: "";
-  transform: rotate(-180deg);
-}
 .main-form__input::placeholder {
   font-size: 16px;
   font-weight: 400;
   color: inherit;
 }
 .main-form__input:hover {
-  box-shadow: inset 0 -3.5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
 }
 .main-form__input:focus {
   border: 2px solid #fff;
@@ -1251,6 +1230,46 @@ h6 {
 }
 .main-form__select {
   position: relative;
+}
+.main-form__select-default {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  padding: 15px 20px 15px 25px;
+  background: none;
+  border: 1px solid #e0b660;
+  box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  position: relative;
+}
+.main-form__select-default::after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 7px;
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  z-index: 1;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
+  background: url(../../images/feedback/arrow.png) 0 0 no-repeat;
+}
+.main-form__select-default span {
+  display: block;
+}
+.main-form__select-default:hover {
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.2);
+}
+.main-form__select-default.active {
+  box-shadow: 0px 10px 13px -7px rgba(0, 0, 0, 0.4);
+  border: 2px solid #fff;
+}
+.main-form__select-default.active::after {
+  content: "";
+  transform: rotate(-180deg);
 }
 .main-form__ways {
   position: absolute;
