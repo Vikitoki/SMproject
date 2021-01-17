@@ -40,5 +40,24 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.toggle("lock");
   }
 
-  
+  // Show form`s select =========================================
+
+  const selectBtn = document.querySelector(".main-form__input_default"),
+    selectWays = document.querySelector(".main-form__ways"),
+    feedback = document.querySelector(".feedback");
+
+  selectBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    selectWays.classList.toggle("active");
+    this.classList.toggle("active");
+  });
+
+  feedback.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    if (event.target && !event.target.closest(".main-form__select")) {
+      selectWays.classList.remove("active");
+    }
+  });
 });
