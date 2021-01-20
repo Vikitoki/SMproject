@@ -18,10 +18,18 @@
   }
 
   @media (max-width: $md2 + px) {
-		padding: 20px 15px 20px;
-		
+    padding: 20px 15px 20px;
+
     &.active {
-      background-color: #000;
+      background-color: rgb(20, 20, 20);
+    }
+
+    &.fixed {
+      padding: 15px;
+
+      position: fixed;
+
+      background-color: rgb(20, 20, 20);
     }
   }
 

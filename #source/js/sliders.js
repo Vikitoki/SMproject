@@ -118,12 +118,6 @@ if (document.querySelector(".slider-blog")) {
 
     effect: "fade",
 
-    // // Стрелки
-    // navigation: {
-    //   nextEl: ".pagination-services__arrow_prev",
-    //   prevEl: ".pagination-services__arrow_next",
-    // },
-
     // Пагинация
     pagination: {
       el: ".slider-blog__pagination",
@@ -142,23 +136,6 @@ if (document.querySelector(".slider-blog")) {
       // Отключить после ручного переключения
       disableOnInteraction: true,
     },
-
-    // // Брейкпоинты
-    // breakpoints: {
-    //   0: {
-    //     slidesPerView: 1,
-    //   },
-    //   768: {
-    // 		slidesPerView: 1,
-    // 		autoHeight = true,
-    //   },
-    //   992: {
-    // 		slidesPerView: 2,
-    //   },
-    //   1180: {
-    //     slidesPerView: 3,
-    //   },
-    // },
   });
 }
 
@@ -188,4 +165,87 @@ function takeBackgroundToPagination(w) {
       item.style.backgroundImage = "";
     });
   }
+}
+
+// Bild Reviews slider ============================================================================
+
+if (document.querySelector(".reviews__slider")) {
+  let myReviewsSlider = new Swiper(".reviews__slider-container", {
+    loop: true,
+    speed: 800,
+    observer: true,
+    autoHeight: true,
+    observeParents: true,
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+
+    grabCursor: false,
+    slideToClickedSlide: false,
+
+    // Пагинация
+    pagination: {
+      el: ".reviews__slider-pagination",
+
+      // Буллеты
+      type: "bullets",
+      clickable: true,
+    },
+
+    // Автопрокрутка
+    autoplay: {
+      // Пауза между прокруткой
+      delay: 5000,
+      // Закончить на последнем слайде
+      stopOnLastSlide: false,
+      // Отключить после ручного переключения
+      disableOnInteraction: true,
+    },
+  });
+}
+
+// Bild Partners slider ============================================================================
+
+if (document.querySelector(".partners__slider")) {
+  let myPartnersSlider = new Swiper(".partners__slider-container", {
+    loop: true,
+    speed: 800,
+
+    slidesPerGroup: 1,
+    slidesPerView: 4,
+
+    grabCursor: false,
+    slideToClickedSlide: false,
+
+    // Стрелки
+    navigation: {
+      nextEl: ".arrows-slider-partners__item_next",
+      prevEl: ".arrows-slider-partners__item_prev",
+    },
+
+    // Автопрокрутка
+    autoplay: {
+      // Пауза между прокруткой
+      delay: 3000,
+      // Закончить на последнем слайде
+      stopOnLastSlide: false,
+      // Отключить после ручного переключения
+      disableOnInteraction: true,
+    },
+
+    // Брейкпоинты
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      480: {
+        slidesPerView: 2,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      1180: {
+        slidesPerView: 4,
+      },
+    },
+  });
 }

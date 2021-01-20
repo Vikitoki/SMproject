@@ -67,10 +67,16 @@ $fontFamily: "Raleway";
 .wrapper {
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
-  position: relative;
   display: flex;
   flex-direction: column;
+
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  overflow: hidden;
+
   &.loaded {
   }
 }
@@ -91,6 +97,8 @@ $fontFamily: "Raleway";
 @import "services.scss";
 @import "blog.scss";
 @import "feedback.scss";
+@import "reviews.scss";
+@import "partners.scss";
 @import "footer.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ ЭЛЕМЕНТОВ>
 

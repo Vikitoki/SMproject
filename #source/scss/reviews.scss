@@ -1,0 +1,194 @@
+.reviews {
+  padding: 105px 0;
+
+  position: relative;
+
+  @media (max-width: $md2 + px) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: $md4 + px) {
+    padding: 30px 0;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: "";
+
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba(61, 60, 60, 0.9);
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+  }
+
+  &__container {
+    text-align: center;
+
+    position: relative;
+    z-index: 42;
+  }
+
+  &__title {
+    margin-bottom: 53px;
+    display: inline-block;
+
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 38px;
+    text-transform: uppercase;
+
+    span {
+      color: #f9c869;
+    }
+
+    @media (max-width: $md2 + px) {
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.item-reviews {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 70px;
+  margin: 0 auto;
+
+  @media (max-width: $md3 + px) {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: 10px;
+
+    font-family: $pt;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+  }
+
+  &__date {
+    display: block;
+    margin-bottom: 20px;
+
+    font-family: $pt;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6c6a69;
+    font-style: italic;
+  }
+
+  &__grade {
+    margin-bottom: 40px;
+
+    @media (max-width: $md2 + px) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__text {
+    display: block;
+
+    font-size: 14px;
+    font-weight: 400;
+    color: #95989a;
+    line-height: 30px;
+
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+
+      display: block;
+      width: 30px;
+      height: 30px;
+
+      background: url(../../images/reviews/text-icon.png) 0 0 no-repeat;
+
+      font-size: 56px;
+      font-weight: 700;
+      color: #f9c869;
+
+      position: absolute;
+    }
+
+    &::before {
+      top: 5px;
+      left: -60px;
+    }
+
+    &::after {
+      top: 0;
+      right: -60px;
+
+      transform: rotate(180deg);
+    }
+
+    p {
+      display: block;
+      margin-bottom: 15px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: $md3 + px) {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.grade-reviews {
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+      margin: 0 3px;
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 13px;
+    height: 13px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+}

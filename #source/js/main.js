@@ -29,16 +29,49 @@ document.addEventListener("DOMContentLoaded", function () {
     introBackground = document.querySelector(".intro__background"),
     header = document.querySelector(".header");
 
-  burgerMenuBtn.addEventListener("click", showIntroMenu);
+  // Header ==================================================
 
-  function showIntroMenu(params) {
+  const introBlock = document.querySelector(".intro");
+  let scrollYOffset = window.pageYOffset;
+
+  toggleFixToHeader(scrollYOffset);
+
+  window.addEventListener("scroll", function () {
+    scrollYOffset = window.pageYOffset;
+
+    toggleFixToHeader(scrollYOffset);
+  });
+
+  function toggleFixToHeader(scrollTop) {
+    if (
+      scrollTop >=
+      introBlock.clientHeight - document.documentElement.clientHeight / 3
+    ) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  }
+
+  // Menu
+
+  burgerMenuBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
     this.classList.toggle("active");
     introWrapper.classList.toggle("active");
     introMenu.classList.toggle("active");
     introBackground.classList.toggle("active");
-    header.classList.toggle("active");
     document.body.classList.toggle("lock");
-  }
+
+    if (
+      scrollYOffset <
+      introBlock.clientHeight - document.documentElement.clientHeight / 3
+    ) {
+      header.classList.toggle("active");
+    } 
+  });
+
 
   // Show form`s select =========================================
 
@@ -71,6 +104,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (event.target && !event.target.closest(".main-form__select")) {
       selectBlock.classList.remove("active");
+      selectBtn.classList.remove("active");
     }
+  });
+
+  // Footer =========================================
+
+  const footerLogo = document.querySelector(".content-footer__logo");
+
+  footerLogo.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    document.documentElement.scrollTop = 0;
   });
 });

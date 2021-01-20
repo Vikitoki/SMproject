@@ -1,0 +1,40 @@
+.partners {
+  padding: 90px 0 120px;
+
+  background-color: #fff;
+
+  @media (max-width: $md2 + px) {
+    padding: 40px 0;
+  }
+
+  &__container {
+    text-align: center;
+  }
+
+  &__title {
+    display: inline-block;
+    margin-bottom: 80px;
+
+    font-size: 30px;
+    font-weight: 700;
+    color: #f9c869;
+    text-transform: uppercase;
+
+    @media (max-width: $md2 + px) {
+      margin-bottom: 35px;
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 175px;
+    min-height: 50px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+}
